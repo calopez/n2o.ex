@@ -4,7 +4,7 @@ defmodule N2O do
                     actions: [], class: [], style: [], source: [],
                     data_fields: [],aria_states: [], body: [], role: [],
                     tabindex: 0, show_if: false, html_tag: :undefined,
-                    title: "", file: "index", bindings: [], app: "/home/maxim/synrc/n2o_elixir",
+                    title: "", file: "index", bindings: [], app: __DIR__,
                     folder: "priv/templates", ext: "html", bind_script: true
 
     defrecord :context, Record.extract(:context, from_lib: "n2o/include/wf.hrl")
