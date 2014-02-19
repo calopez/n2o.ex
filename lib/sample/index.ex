@@ -1,7 +1,7 @@
 defmodule Sample.Index do
 
     def event(:init) do :wf.reg(:room) end
-    def event({:chat,pid}) do pid <- {:message, :wf.q(:message)} end
+    def event({:chat,pid}) do pid |> send {:message, :wf.q(:message)} end
     def event(e) do :wf.info('Unknown Event ~p',[e]) end
     def main() do :dtl.new(file: "index", bindings: [title: "Elixir N2O", body: body()]) end
     def body() do { :ok, pid } = :wf.async(fn() -> loop() end)
